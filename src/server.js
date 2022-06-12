@@ -1,17 +1,17 @@
-const express = require('express')
-const route = require('./route')
-const path = require('path')
+const express = require('express') // Importa o módulo express
+const route = require('./route') // Importa o arquivo de rotas
+const path = require('path') // Importa o módulo path
 
-const server = express()
+const server = express() // Cria um objeto que será exportado
 
-server.set('view engine', 'ejs')
+server.set('view engine', 'ejs') // Define o motor de renderização
 
-server.use(express.static("public"))
+server.use(express.static("public")) // Define o caminho para a pasta public
 
-server.set('views', path.join(__dirname, 'views'))
+server.set('views', path.join(__dirname, 'views')) // Define o caminho para a pasta views
 
-server.use(express.urlencoded({ extended: true }))
+server.use(express.urlencoded({extended: true})) // Define o módulo de parse de requisições
 
-server.use(route)
+server.use(route) // Usa o arquivo de rotas
 
-server.listen(3000, () => console.log("Rodando na porta 3000"))
+server.listen(3000, () => console.log("RODANDO")) // Inicia o servidor

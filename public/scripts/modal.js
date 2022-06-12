@@ -1,20 +1,19 @@
-export default function Modal() {
-  const modalWrapper = document.querySelector(".modal-wrapper")
-  const cancelButton = document.querySelector(".button.cancel");
+export default function Modal() { //função que será exportada
 
-  cancelButton.addEventListener("click", close)
+  const modalWrapper = document.querySelector('.modal-wrapper') //pegar o wrapper do modal
+  const cancelButton = document.querySelector('.button.cancel') //pegar o botão cancelar
 
-  function open() {
-    //funcionalidade de atribuir a classe active para a modal
-    modalWrapper.classList.add("active")
-  }
-  function close() {
-    //funcionalidade de remover a classe active da modal
-    modalWrapper.classList.remove("active")
-  }
+  cancelButton.addEventListener("click", close) //adicionar a escuta
 
-  return {
-    open,
-    close
-  }
-}
+  function open() { //função que abre o modal
+    modalWrapper.classList.add("active") //adicionar a classe active
+  } //fim da função open
+  function close() { //função que fecha o modal
+    modalWrapper.classList.remove("active") //remover a classe active
+  } //fim da função close
+
+  return { //função que será exportada
+    open, //abrir modal
+    close //fechar modal
+  } //fim da função que será exportada
+} //fim da função Modal
